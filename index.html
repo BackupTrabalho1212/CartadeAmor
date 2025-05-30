@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você ❤️</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f5f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .envelope {
+            background-color: #fffefc;
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            border: 1px solid #e0d6cd;
+        }
+        
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 25px 25px 0;
+            border-style: solid;
+            border-color: #e8e0d8 #f8f5f2;
+            box-shadow: -2px 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        .letter {
+            background-color: #fffefc;
+            padding: 20px;
+            border: 1px solid #e0d6cd;
+            position: relative;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.03);
+        }
+        
+        .letter:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                #fffefc,
+                #fffefc 24px,
+                #e0d6cd 25px,
+                #e0d6cd 26px
+            );
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .letter-content {
+            position: relative;
+            z-index: 1;
+            line-height: 26px;
+        }
+        
+        h1 {
+            color: #7a5c50;
+            text-align: center;
+            font-size: clamp(20px, 5vw, 24px);
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #d0c6bd;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 30px;
+            color: #555;
+            font-size: clamp(14px, 3.5vw, 16px);
+            line-height: 1.6;
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 30px;
+            color: #7a5c50;
+        }
+        
+        .heart {
+            color: #c17c74;
+            font-size: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 3px;
+            font-size: clamp(14px, 4vw, 16px);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Georgia', serif;
+            min-width: 100px;
+        }
+        
+        #sim {
+            background-color: #c17c74;
+            color: white;
+        }
+        
+        #nao {
+            background-color: #e0d6cd;
+            color: #555;
+            position: relative;
+        }
+        
+        .message {
+            display: none;
+        }
+        
+        .initial-content {
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 400px) {
+            .letter {
+                padding: 15px;
+            }
+            
+            p {
+                text-indent: 20px;
+                margin-bottom: 12px;
+            }
+            
+            button {
+                padding: 8px 20px;
+                min-width: 80px;
+            }
+            
+            .buttons {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope">
+        <div class="initial-content" id="initial">
+            <h1>Para a Pessoa Mais Especial da Minha Vida ❤️</h1>
+            <p>Antes de abrir esta carta, eu queria te dizer o quanto você significa para mim...</p>
+            <p>Você deseja abrir a carta ?</p>
+            
+            <div class="buttons">
+                <button id="sim">Sim</button>
+                <button id="nao">Não</button>
+            </div>
+        </div>
+        
+        <div class="letter message" id="message">
+            <div class="letter-content">
+                <h1>Minha Princesa</h1>
+                
+                <p>Quando eu penso em você, meu coração se enche de uma alegria que não consigo explicar. Cada momento ao seu lado é como uma página de um livro especial que eu nunca quero terminar de ler.</p>
+                
+                <p>Seu sorriso ilumina meus dias mais escuros, sua voz acalma meus pensamentos mais turbulentos, e seu amor me dá forças para ser melhor a cada dia. Você é a personificação de tudo que é bom e belo neste mundo.</p>
+                
+                <p>Não existem palavras suficientes para expressar a profundidade do que sinto por você. É um amor que transcende o tempo e o espaço, que habita cada átomo do meu ser. Você se tornou meu porto seguro, meu lar, meu tudo.</p>
+                
+                <p>Prometo estar ao seu lado nos dias bons e ruins, celebrar cada vitória e amenizar cada dor. Quero construir uma vida de memórias lindas ao seu lado, porque com você, até os momentos mais simples se tornam extraordinários.</p>
+                
+                <p>Obrigado por existir, por ser exatamente quem você é, e por me permitir amar você.</p>
+                
+                <div class="signature">
+                    Com todo meu amor,<br>
+                    <span class="heart">❤️</span> [ SOLDADINHO ] <span class="heart">❤️</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const simBtn = document.getElementById('sim');
+        const naoBtn = document.getElementById('nao');
+        const message = document.getElementById('message');
+        const initial = document.getElementById('initial');
+        
+        simBtn.addEventListener('click', () => {
+            initial.style.display = 'none';
+            message.style.display = 'block';
+        });
+        
+        naoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const container = e.target.parentElement.parentElement;
+            const containerRect = container.getBoundingClientRect();
+            
+            // Calcula a área disponível considerando o padding
+            const availableWidth = containerRect.width - 40;
+            const availableHeight = containerRect.height - 40;
+            
+            // Garante que o botão não saia dos limites
+            const maxX = Math.max(0, availableWidth - naoBtn.offsetWidth);
+            const maxY = Math.max(0, availableHeight - naoBtn.offsetHeight);
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            naoBtn.style.position = 'absolute';
+            naoBtn.style.left = randomX + 'px';
+            naoBtn.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
